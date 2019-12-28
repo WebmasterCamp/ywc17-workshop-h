@@ -1,7 +1,8 @@
 <template>
   <div class="bg">
-    <div class="container pt-3">
-      <div class="row driver pb-3 pt-3">
+    <div class="container pt-5">
+      <img src="../../assets/select.png" />
+      <!-- <div class="row driver pb-3 pt-3">
         <div class="name col-12 mt-3">
           <div class="row">
             <img class="col-3 picture ml-auto" src="https://via.placeholder.com/150" />
@@ -26,12 +27,13 @@
       </div>
       <div class="detail2 mt-5">
         <h4>สถานะผู้ขับรถ</h4>
-        <img class="img-fluid col-5 maps" src="../../assets/driver-status.png"/>
-      </div>
-      <div class="btn-group mt-5">
+        <img class="img-fluid col-5 maps" src="../../assets/driver-status.png" />
+      </div>-->
+      <!-- <div class="btn-group mt-5">
         <button class="pl-3 pr-3 pt-2 pb-1" @click="handlePark">รับ</button>
         <button class="pl-3 pr-3 ml-3 pt-2 pb-1" @click="handleHome">ยกเลิก</button>
-      </div>
+      </div>-->
+      <img src="../../assets/select2.png" @click="handlePark"/>
     </div>
   </div>
 </template>
@@ -55,6 +57,13 @@ export default Vue.extend({
   border-collapse: separate;
 }
 
+
+h2,
+h4,
+button {
+  font-family: "Kanit", sans-serif;
+}
+
 h2 {
   @media only screen and (max-width: 766px) {
     font-size: 1.3rem;
@@ -66,7 +75,6 @@ h4 {
   }
 }
 .bg {
-  background-color: #00298e;
   height: 100%;
 }
 
