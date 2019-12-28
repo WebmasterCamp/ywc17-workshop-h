@@ -8,6 +8,7 @@ import HomePage from '../pages/home/HomePage'
 import WaitingPage from '../pages/waiting/WaitingPage'
 import WaitPage from '../pages/wait/WaitPage'
 import SelectDriverPage from '../pages/selectDriver/SelectDriverPage'
+import ContactPage from '../pages/contact/ContactPage'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/select',
       name: 'SelectDriverPage',
       component: SelectDriverPage
-    }
+    },
+    {
+      path: '/contact',
+      name: 'ContactPage',
+      component: ContactPage
+    },
   ]
 })

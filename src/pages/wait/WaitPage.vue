@@ -13,7 +13,7 @@ import Vue from "vue";
 export default Vue.extend({
   mounted() {
     setTimeout(() => {
-      this.$router.push({ name: "WaitingPage" });
+      this.$router.push({ name: "SelectDriverPage" });
     }, 5000);
   }
 });
