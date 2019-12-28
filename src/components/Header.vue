@@ -2,12 +2,12 @@
     <header>
       <div class="container">
           <div class="desktop-header d-none d-sm-flex justify-content-between align-items-center">
-              <p>ParkCloud</p>
+              <p>ParCloud</p>
             <ul class="desktop-header justify-content-center list-unstyled m-0">
             </ul>
           </div>
         <div class="mobile-header py-1 d-flex d-sm-none justify-content-between align-items-center">
-        <p>ParkCloud</p>
+        <p>ParCloud</p>
           <button class="hamburger-div" @click="() => setShowMenu()">
             <div v-bind:class="{ show: isShowMenu }" id="hamburger">
               <span />
