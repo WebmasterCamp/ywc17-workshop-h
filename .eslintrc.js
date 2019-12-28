@@ -26,6 +26,8 @@ module.exports = {
     // "semi": "never",
     "semi": [0, "always"],
     "quotes": [0, "double"],
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": 0,
+    "no-trailing-spaces": 0,
+    "indent": 0
   }
 }

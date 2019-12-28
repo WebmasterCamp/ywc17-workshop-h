@@ -15,7 +15,7 @@
         </select>
         <label class="mt-3" for="color">สีรถ</label>
         <input name="color" v-model="form.color" />
-        <router-link class="link btn btn-primary mt-5" to="TermsConditionsPage" @click="handleSubmit">ข้อตกลงและการใช้งาน</router-link>
+        <router-link class="link btn btn-primary mt-5" :to="{ name: 'TermsConditionsPage'}"  @click="handleSubmit">ข้อตกลงและการใช้งาน</router-link>
       </div>
     </div>
   </div>
@@ -48,6 +48,7 @@ input,
 select {
   display: block;
 }
+
 .form {
   display: flex;
   flex-direction: column;
