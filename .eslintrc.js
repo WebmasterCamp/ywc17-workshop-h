@@ -23,11 +23,13 @@ module.exports = {
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-trailing-spaces': 0,
+    'comma-dangle': 0,
+    'indent': 0,
+    'semi': [0, "always"],
+    'space-before-function-paren': 0,
+    'no-undef': 0,
     // "semi": "never",
-    "semi": [0, "always"],
     "quotes": [0, "double"],
-    "space-before-function-paren": 0,
-    "no-trailing-spaces": 0,
-    "indent": 0
   }
 }

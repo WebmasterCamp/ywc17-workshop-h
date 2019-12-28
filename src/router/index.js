@@ -1,13 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import RegisterPage from '../pages/register/RegisterPage'
-import HomePage from '../pages/home/HomePage'
-import TermsConditionsPage from '../pages/termsConditions/TermsConditionsPage'
+import LandingPage from '../pages/landing/LandingPage'
+import LoginPage from '../pages/login/LoginPage'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'landing',
+      component: LandingPage
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginPage
+    },
     {
       path: '/register',
       name: 'RegisterPage',
