@@ -30,7 +30,7 @@
       </div>
       <div class="btn-group mt-5">
         <button class="pl-3 pr-3 pt-2 pb-1" @click="handlePark">รับ</button>
-        <button class="pl-3 pr-3 ml-3 pt-2 pb-1">ยกเลิก</button>
+        <button class="pl-3 pr-3 ml-3 pt-2 pb-1" @click="handleHome">ยกเลิก</button>
       </div>
     </div>
   </div>
@@ -42,6 +42,9 @@ export default Vue.extend({
   methods: {
     handlePark() {
       this.$router.push({ name: "WaitingPage" });
+    },
+    handleHome() {
+      this.$router.push({ name: "HomePage" });
     }
   }
 });

@@ -7,17 +7,12 @@
                     <button
                         @click="() => changeType('owner')"
                         class="mr-md-5 py-4 align-self-end align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
-                        <div class="icon">
-                            O
-                        </div>
                         <p class="mb-0">เจ้าของรถ</p>
                     </button>
                     <button
+                        :disabled="true"
                         @click="() => changeType('driver')"
                         class="mt-4 mt-sm-0 ml-md-5 py-4 align-self-start align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
-                        <div>
-                            D
-                        </div>
                         <p class="mb-0">คนขับ</p>
                     </button>
                 </div>

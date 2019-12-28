@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div class="container">
+    <div class="container mt-3">
         <div class="d-flex flex-column align-items-center">
             <h4>รถของคุณได้ทำการเข้าจอดเรียบร้อย</h4>
             <div class="cost-container border rounded p-4 border-blue">
