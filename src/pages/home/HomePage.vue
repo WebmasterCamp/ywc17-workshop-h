@@ -63,8 +63,8 @@
         </div>
       </div>
       <div class="row menu mt-5">
-        <button :disabled="!isParked" class="col-6 btn btn-success">park car</button>
-        <button :disabled="isParked" class="col-6 btn btn-danger">get car</button>
+        <button :disabled="isParked" class="col-6 btn btn-success" @click="handlePark">park car</button>
+        <button :disabled="!isParked" class="col-6 btn btn-danger">get car</button>
       </div>
     </div>
   </div>
@@ -80,6 +80,11 @@ export default Vue.extend({
     parkStatus: () => {
       return this.isParked ? "ฝากแล้ว" : "ยังไม่ฝาก";
     }
+  },
+  methods: {
+      handlePark() {
+         this.$router.push({ name: "WaitPage" });
+      }
   }
 });
 </script>
