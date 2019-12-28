@@ -1,81 +1,52 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">ParkCloud</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+    <Header />
+    <div class="container mt-3">
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="img-container w-25 flex-grow-1 rounded overflow-hidden">
+          <img class="w-100" src="https://via.placeholder.com/150" />
+        </div>
+        <div class="ml-3">
+          <h4>สมชาย</h4>
+          <div class="d-flex align-items-center">
+            <div>
+              <p class="mb-0">สถานะ</p>
+              <p class="mb-0">กำลังใช้งาน</p>
             </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="user-card col-12">
-          <img src="../../assets/person.png" class="profile col-md-3 col-sm-12 img-fluid" />
-          <div class="detail ml-md-5 col-md-6 col-sm-12">
-            <h2>นาย นายนายนาย</h2>
-            <br />
-            <div class="information">
-              <img class="car img-fluid" src="../../assets/car.png" />
-              <div class="status ml-3">
-                <h4>สถานะรถ</h4>
-                <p>{{parkStatus}}</p>
-              </div>
+            <div class="car w-25 flex-grow-1 ml-2">
+              <img class="w-100" src="../../assets/real-car.png" />
             </div>
           </div>
         </div>
       </div>
-      <div class="row menu mt-5">
-        <button :disabled="isParked" class="col-6 btn btn-success" @click="handlePark">park car</button>
-        <button :disabled="!isParked" class="col-6 btn btn-danger">get car</button>
-      </div>
+      <div class="d-flex flex-column flex-md-row justify-content-between justify-content-md-center align-items-md-center w-100 py-3">
+                    <button
+                        :disabled="isParked"
+                        @click="handlePark"
+                        class="mr-md-5 py-4 align-self-end align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
+                        <p class="mb-0">หาคนจอดรถให้</p>
+                    </button>
+                    <button
+                        :disabled="!isParked"
+                        @click="handlePark"
+                        class="mt-4 mt-sm-0 ml-md-5 py-4 align-self-start align-self-md-center type-btn btn btn-link bg-grey text-white d-flex flex-column align-items-center">
+                        <p class="mb-0">หาคนขับรถให้</p>
+                    </button>
+                </div>
     </div>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
+import Header from '../../components/Header'
 export default Vue.extend({
   data() {
     return { isParked: false };
   },
+  components: {
+    Header
+  },  
   computed: {
     parkStatus: () => {
       return this.isParked ? "ฝากแล้ว" : "ยังไม่ฝาก";
@@ -90,10 +61,17 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/variables';
 * {
   font-family: "Kanit", sans-serif;
 }
 
+.img-container {
+  max-width: 150px;
+  @media screen and (max-width: 576px) {
+            max-width: 75px;
+        }
+}
 h2 {
   @media only screen and (max-width: 766px) {
     font-size: 1.5rem;
@@ -106,6 +84,22 @@ h4 {
   }
 }
 
+.car {
+  @media screen and (max-width: 576px) {
+            max-width: 75px;
+        }
+}
+.container {
+        @media screen and (max-width: 576px) {
+            padding: 0px !important;
+        }
+    }
+    .bg-grey {
+    background-color: #AAB0BA !important;
+  }
+  .type-btn {
+        width: 180px;
+    }
 .user-card {
   margin: 0 auto;
   display: flex;
@@ -147,7 +141,6 @@ h4 {
       }
     }
   }
-
   .menu {
     display: flex;
     flex-direction: row;

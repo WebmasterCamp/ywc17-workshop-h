@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="detail2 mt-5">
-        <h4>สถานะผู้ัขับรถ</h4>
+        <h4>สถานะผู้ขับรถ</h4>
         <img class="img-fluid col-5 maps" src="../../assets/driver-status.png"/>
       </div>
       <div class="btn-group mt-5">
