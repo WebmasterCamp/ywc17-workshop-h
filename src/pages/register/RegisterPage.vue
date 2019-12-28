@@ -5,7 +5,7 @@
       <div class="form col-12">
         <label for="name">ชื่อ</label>
         <input name="name" id="name" v-model="form.name" />
-        <label class="mt-3" for="license-plate">ทะเบียน</label>
+        <label class="mt-3" for="license-plate">ทะเบียนรถ</label>
         <input name="license-plate" id="license-plate" v-model="form.license" />
         <label class="mt-3">ยี่ห้อ</label>
         <select name="cars" v-model="form.brand">
