@@ -10,7 +10,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+h2 {
+  @media only screen and (max-width: 766px) {
+    font-size: 1.5rem;
+  }
+}
+
+h4 {
+  @media only screen and (max-width: 766px) {
+    font-size: 1rem;
+  }
+}
+
 body {
   margin: 0;
 }

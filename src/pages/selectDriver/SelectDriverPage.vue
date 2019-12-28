@@ -29,7 +29,7 @@
         <img class="img-fluid col-5 maps" src="../../assets/driver-status.png"/>
       </div>
       <div class="btn-group mt-5">
-        <button class="pl-3 pr-3 pt-2 pb-1">รับ</button>
+        <button class="pl-3 pr-3 pt-2 pb-1" @click="handlePark">รับ</button>
         <button class="pl-3 pr-3 ml-3 pt-2 pb-1">ยกเลิก</button>
       </div>
     </div>
@@ -38,7 +38,13 @@
 
 <script>
 import Vue from "vue";
-export default Vue.extend({});
+export default Vue.extend({
+  methods: {
+    handlePark() {
+      this.$router.push({ name: "WaitingPage" });
+    }
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -109,9 +115,8 @@ h4 {
     outline: none;
     border: none;
   }
-
 }
 .maps {
-    padding: 0;
+  padding: 0;
 }
 </style>
