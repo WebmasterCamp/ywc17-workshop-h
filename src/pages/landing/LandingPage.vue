@@ -9,7 +9,7 @@
                     ที่จะเชื่อมต่อผู้ที่พบเจอปัญหา <br> เกี่ยวกับการจอดรถเข้ากับ <br> ผู้ที่ยินดีให้บริการ <br> รับรถไปจอดให้
                 </div>
             </div>
-            <router-link :to="{name: 'LoginPage'}" class="align-self-end btn bg-white text-blue btn-link border border-light rounded-circle"><i class="fas fa-chevron-right"></i></router-link>
+            <router-link :to="{name: 'LoginPage'}" class="align-self-end btn bg-white text-blue btn-link border border-light rounded-circle">></router-link>
         </div>
         </div>
     </div>
