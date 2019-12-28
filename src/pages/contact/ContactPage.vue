@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <contact-card></contact-card>
-    <div class="ml-auto contact-box w-70">
-      <h4>ติดต่อผู้ขับรถ</h4>
-      <p class="mb-3">ผู้ขับรถ</p>
-      <div>
-        <img />
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <contact-card></contact-card>
       </div>
+      <img src="../../assets/contact-box.png" />
     </div>
   </div>
 </template>
@@ -22,5 +20,9 @@ export default Vue.extend({
 .contact-box {
   width: 70%;
   margin: auto;
+}
+
+img {
+  margin: 0 auto;
 }
 </style>
