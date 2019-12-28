@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
     <main>
-      <div>group h</div>
+      <router-view ></router-view>
     </main>
   </div>
 </template>
 
 <script>
+import LandingPage from './pages/landing/LandingPage'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    LandingPage
+  },
+  data: () => ({
+    page: 0
+  }),
+  methods: {
+    changePage(num) {
+      this.page = num
+    }
+  }
 }
 </script>
 
