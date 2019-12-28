@@ -1,14 +1,12 @@
 <template>
   <div id="app">
-    <RegisterPage></RegisterPage>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import RegisterPage from "./pages/register/RegisterPage.vue";
 export default {
-  name: "app",
-  components: { RegisterPage }
+  name: "app"
 };
 </script>
 

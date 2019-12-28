@@ -3,19 +3,19 @@
     <div class="row">
       <div class="form col-12">
         <label for="name">ชื่อ</label>
-        <input name="name" id="name" />
+        <input name="name" id="name" v-model="form.name" />
         <label class="mt-3" for="license-plate">ทะเบียน</label>
-        <input name="license-plate" id="license-plate" />
+        <input name="license-plate" id="license-plate" v-model="form.license" />
         <label class="mt-3">ยี่ห้อ</label>
-        <select name="cars">
+        <select name="cars" v-model="form.brand">
           <option value="volvo">Volvo</option>
           <option value="saab">Saab</option>
           <option value="fiat">Fiat</option>
           <option value="audi">Audi</option>
         </select>
         <label class="mt-3" for="color">สีรถ</label>
-        <input name="color" />
-        <button class="mt-5">ข้อตกลงและการใช้งาน</button>
+        <input name="color" v-model="form.color" />
+        <router-link class="link btn btn-primary mt-5" to="TermsConditionsPage" @click="handleSubmit">ข้อตกลงและการใช้งาน</router-link>
       </div>
     </div>
   </div>
@@ -23,7 +23,23 @@
 
 <script>
 import Vue from "vue";
-export default Vue.extend({});
+export default Vue.extend({
+  data () {
+    return {
+      form: {
+        name: "",
+        license: "",
+        brand: "",
+        color: ""
+      }
+    };
+  },
+  methods: {
+    handleSubmit () {
+      console.log(this.form);
+    }
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -43,6 +59,10 @@ select {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.link {
+
 }
 
 .row {
