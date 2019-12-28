@@ -1,6 +1,7 @@
 <template>
+<div class="main-bg">
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center mh-100">
       <div class="form col-12">
         <label for="name">ชื่อ</label>
         <input name="name" id="name" v-model="form.name" />
@@ -15,10 +16,11 @@
         </select>
         <label class="mt-3" for="color">สีรถ</label>
         <input name="color" v-model="form.color" />
-        <router-link class="link btn btn-primary mt-5" :to="{ name: 'TermsConditionsPage'}"  @click="handleSubmit">ข้อตกลงและการใช้งาน</router-link>
+        <router-link class="blue-btn link btn rounded-pill bg-blue text-white mt-5" :to="{ name: 'TermsConditionsPage'}"  @click="handleSubmit">ข้อตกลงและการใช้งาน</router-link>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -43,11 +45,30 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/variables';
 label,
 input,
 select {
   display: block;
 }
+label {
+  color: $blue;
+  font-family: 'Chonburi';
+  font-size: 16px;
+}
+.mh-100 {
+        height: 100vh;
+    }
+input {
+  border-color: $blue;
+  border-radius: 50rem;
+  background-color: transparent;
+  outline: none;
+  padding: 0 5px;
+}
+.main-bg {
+        background-color: $blue;
+    }
 
 .form {
   display: flex;
@@ -56,14 +77,18 @@ select {
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+        background-color: white;
+        @media screen and (max-width: 576px) {
+            padding: 0px !important;
+        }
+    }
 
 .link {
 
+}
+
+.blue-btn {
+  font-family: 'Chonburi';
 }
 
 .row {

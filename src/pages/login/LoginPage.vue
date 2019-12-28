@@ -1,31 +1,35 @@
 <template>
-    <div class="container">
-        <div v-if="!type">
-            <h2>กรุณาเลือกผู้ใช้งาน</h2>
-            <div class="d-flex justify-content-center">
-                <div class="d-flex flex-column px-5">
-                    <button @click="() => changeType('owner')" class="btn btn-link rounded-circle border border-light">
-                        O
+    <div class="main-bg">
+        <div class="container">
+            <div v-if="!type" class="d-flex flex-column align-items-center justify-content-sm-center mh-100">
+                <h2 class="head my-3">คุณคือใคร?</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between justify-content-md-center align-items-md-center w-100 py-3">
+                    <button
+                        @click="() => changeType('owner')"
+                        class="mr-md-5 py-4 align-self-end align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
+                        <div class="icon">
+                            O
+                        </div>
+                        <p class="mb-0">เจ้าของรถ</p>
                     </button>
-                    <p>เจ้าของรถ</p>
-                </div>
-                <div class="d-flex flex-column px-5">
-                    <button @click="() => changeType('driver')" class="btn btn-link rounded-circle border border-light">
-                        D
+                    <button
+                        @click="() => changeType('driver')"
+                        class="mt-4 mt-sm-0 ml-md-5 py-4 align-self-start align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
+                        <div>
+                            D
+                        </div>
+                        <p class="mb-0">คนขับ</p>
                     </button>
-                    <p>คนขับ</p>
                 </div>
             </div>
-        </div>
-        <div v-else>
-            <div v-if="type === 'owner'" class="d-flex flex-column align-items-center">
-                <p>เจ้าของรถ</p>
-                <PhoneInput v-model="phone" v-if="!phone" :submitPhone="submitPhone" />
-                <OTPInput v-model="phone" v-else :submitOTP="submitOTP" />
-            </div>
-            <div v-else-if="type === 'driver'" class="d-flex flex-column align-items-center">
-                <p>คนขับ</p>
-                <PhoneInput />
+            <div class="d-flex flex-column align-items-center justify-content-center mh-100" v-else>
+                <div v-if="type === 'owner'" class="d-flex flex-column align-items-center">
+                    <PhoneInput v-model="phone" v-if="!phone" :submitPhone="submitPhone" />
+                    <OTPInput v-model="phone" v-else :submitOTP="submitOTP" />
+                </div>
+                <div v-else-if="type === 'driver'" class="d-flex flex-column align-items-center">
+                    <PhoneInput />
+                </div>
             </div>
         </div>
     </div>
@@ -57,5 +61,25 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+@import '../../styles/variables';
+    .main-bg {
+        background-color: $blue;
+    }
+    .mh-100 {
+        height: 100vh;
+    }
+    .container {
+        background-color: white;
+        @media screen and (max-width: 576px) {
+            padding: 0px !important;
+        }
+    }
+    .head {
+        font-family: 'Chonburi';
+        font-size: 48px;
+        color: $blue;
+    }
+    .type-btn {
+        width: 180px;
+    }
 </style>

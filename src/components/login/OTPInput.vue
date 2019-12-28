@@ -1,5 +1,5 @@
 <template>
-    <form @submit="(e) => {
+    <form class="d-flex flex-column align-items-center" @submit="(e) => {
         e.preventDefault()
         if (!/^[0-9]{6}$/.test(otp)) {
             error = true
@@ -19,7 +19,7 @@
             </div>
         </div>
         <p v-if="error" class="text-danger">OTP ไม่ถูกต้อง</p>
-        <button type="submit" class="btn btn-link border border-light rounded-circle"><i class="fas fa-chevron-right"></i></button>
+        <button type="submit" class="btn btn-link bg-blue text-white border border-light rounded-circle"><i class="fas fa-chevron-right"></i></button>
     </form>
 </template>
 <script>
@@ -34,5 +34,18 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+@import '../../styles/variables';
+    .input-group-text {
+        background-color: transparent;
+        border-color: $blue;
+        border-top-left-radius: 50rem;
+        border-bottom-left-radius: 50rem;
+        color: $blue;
+        font-family: 'Kanit';
+    }
+    input {
+        border-color: $blue;
+        border-top-right-radius: 50rem;
+        border-bottom-right-radius: 50rem;
+    }
 </style>
