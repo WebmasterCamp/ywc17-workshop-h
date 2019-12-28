@@ -14,7 +14,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">OTP</div>
                     </div>
-                    <input type="text" v-model="otp" class="form-control" id="phone" placeholder="OTP">
+                    <input type="text" v-model="otp" class="form-control" id="otp" placeholder="OTP">
                 </div>
             </div>
         </div>
