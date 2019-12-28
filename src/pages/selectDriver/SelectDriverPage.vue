@@ -25,8 +25,8 @@
         </div>
       </div>
       <div class="detail2 mt-5">
-        <h4>สถานะผู้ัขับรถ</h4>
-        <img class="img-fluid col-5 maps" src="../../assets/driver-status.png" />
+        <h4>สถานะผู้ขับรถ</h4>
+        <img class="img-fluid col-5 maps" src="../../assets/driver-status.png"/>
       </div>
       <div class="btn-group mt-5">
         <button class="pl-3 pr-3 pt-2 pb-1" @click="handlePark">รับ</button>

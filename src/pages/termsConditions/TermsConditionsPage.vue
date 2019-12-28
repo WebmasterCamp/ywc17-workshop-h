@@ -1,9 +1,10 @@
 <template>
+  <div class="main-bg bg-blue">
   <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h1>ข้อตกลงและการใช้งาน</h1>
-        <div class="terms text-left">
+    <div class="d-flex justify-content-center align-items-center mh-100">
+        <div class="bg-white  text-center py-3 px-3 rounded">
+        <h3>ข้อตกลงและการใช้งาน</h3>
+        <div class="terms text-left bg-white my-3 py-3 px-2">
           <ol>
             <li>โปรดอ่านข้อตกลงการใช้บริการอย่างถี่ถ้วน การใช้บริการ (ตามที่ระบุไว้) ถือว่าคุณได้ยอมรับว่าคุณได้อ่าน และเข้าใจในข้อกำหนดต่างๆ ในข้อตกลงการใช้งานที่กำหนดไว้ใช้กับคุณ ข้อกำหนดต่างๆ นี้ ถือเป็นข้อตกลงที่มีผลผูกพันทางกฎหมาย (“ข้อตกลง”) หากคุณไม่ยินยอมต่อข้อตกลงการใช้บริการ โปรดยกเลิกการใช้งาน หรือหยุดการใช้งานแอปพลิเคชันหรือการบริการ</li>
             <li>พาร์คคลาวด์คือบริษัททางเทคโนโลยี ที่ให้บริการแพลตฟอร์มสำหรับผู้ใช้งาน เพื่อรับการบริการ ที่ให้บริการโดยผู้ให้บริการบุคคลที่สาม หน้าที่ของเราคือเป็นตัวกลางสื่อสารระหว่างผู้ใช้งานกับผู้ให้บริการบุคคลที่สาม</li>
@@ -57,8 +58,9 @@
             </li>
           </ol>
         </div>
-        <div><input type="checkbox" id="accept" name="accept" v-model="accepted" /><label for="accept">ฉันยอมรับและเข้าใจสิ่งนี้</label></div>
-        <button :disabled="!accepted" @click="handleRegister" class="btn btn-primary mt-3">ลงทะเบียน</button>
+        <div><input type="checkbox" id="accept" name="accept" v-model="accepted" /><label class="ml-2" for="accept">ยอมรับเงื่อนไขที่ทางบริษัทกำหนด</label></div>
+        <button :disabled="!accepted" @click="handleRegister" class="blue-btn btn rounded-pill bg-blue text-white mt-3">ลงทะเบียน</button>
+        </div>
       </div>
     </div>
   </div>
@@ -81,12 +83,22 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/variables';
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+        @media screen and (max-width: 576px) {
+            padding: 0px !important;
+        }
+    }
+  h3 {
+    font-family: 'Chonburi';
+  }
+    .main-bg {
+        background-color: $blue;
+    }
+
+    .mh-100 {
+      min-height: 100vh;
+    }
 
 .row {
   margin: auto;
@@ -95,6 +107,14 @@ export default Vue.extend({
   @media only screen and (max-width: 766px) {
     width: 80%;
   }
+}
+
+label {
+  font-family: 'Chonburi';
+}
+
+.blue-btn {
+  font-family: 'Chonburi';
 }
 
 .terms {
