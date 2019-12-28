@@ -7,6 +7,7 @@ import TermsConditionsPage from '../pages/termsConditions/TermsConditionsPage'
 import HomePage from '../pages/home/HomePage'
 import WaitingPage from '../pages/waiting/WaitingPage'
 import WaitPage from '../pages/wait/WaitPage'
+import SelectDriverPage from '../pages/selectDriver/SelectDriverPage'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
       path: '/wait',
       name: 'WaitPage',
       component: WaitPage
+    },
+    {
+      path: '/select',
+      name: 'SelectDriverPage',
+      component: SelectDriverPage
     }
   ]
 })

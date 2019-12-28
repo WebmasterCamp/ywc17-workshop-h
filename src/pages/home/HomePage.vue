@@ -82,14 +82,18 @@ export default Vue.extend({
     }
   },
   methods: {
-      handlePark() {
-         this.$router.push({ name: "WaitPage" });
-      }
+    handlePark() {
+      this.$router.push({ name: "WaitPage" });
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
+* {
+  font-family: "Kanit", sans-serif;
+}
+
 h2 {
   @media only screen and (max-width: 766px) {
     font-size: 1.5rem;
