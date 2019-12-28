@@ -1,30 +1,32 @@
 <template>
-    <div v-if="!type">
-        <h2>กรุณาเลือกผู้ใช้งาน</h2>
-        <div class="d-flex justify-content-center">
-            <div class="d-flex flex-column px-5">
-                <button @click="() => changeType('owner')" class="btn btn-link rounded-circle border border-light">
-                    O
-                </button>
+    <div class="container">
+        <div v-if="!type">
+            <h2>กรุณาเลือกผู้ใช้งาน</h2>
+            <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column px-5">
+                    <button @click="() => changeType('owner')" class="btn btn-link rounded-circle border border-light">
+                        O
+                    </button>
+                    <p>เจ้าของรถ</p>
+                </div>
+                <div class="d-flex flex-column px-5">
+                    <button @click="() => changeType('driver')" class="btn btn-link rounded-circle border border-light">
+                        D
+                    </button>
+                    <p>คนขับ</p>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <div v-if="type === 'owner'" class="d-flex flex-column align-items-center">
                 <p>เจ้าของรถ</p>
+                <PhoneInput v-model="phone" v-if="!phone" :submitPhone="submitPhone" />
+                <OTPInput v-model="phone" v-else :submitOTP="submitOTP" />
             </div>
-            <div class="d-flex flex-column px-5">
-                <button @click="() => changeType('driver')" class="btn btn-link rounded-circle border border-light">
-                    D
-                </button>
+            <div v-else-if="type === 'driver'" class="d-flex flex-column align-items-center">
                 <p>คนขับ</p>
+                <PhoneInput />
             </div>
-        </div>
-    </div>
-    <div v-else>
-        <div v-if="type === 'owner'" class="d-flex flex-column align-items-center">
-            <p>เจ้าของรถ</p>
-            <PhoneInput v-model="phone" v-if="!phone" :submitPhone="submitPhone" />
-            <OTPInput v-model="phone" v-else :submitOTP="submitOTP" />
-        </div>
-        <div v-else-if="type === 'driver'" class="d-flex flex-column align-items-center">
-            <p>คนขับ</p>
-            <PhoneInput />
         </div>
     </div>
 </template>
@@ -49,7 +51,7 @@ export default {
             this.phone = phone    
         },
         submitOTP(otp) {
-            console.log(otp)
+            this.$router.push({name: 'RegisterPage'})
         }
     }
 }

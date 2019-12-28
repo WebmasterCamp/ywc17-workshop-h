@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div>
-            <router-link :to="{name: 'login'}" class="btn btn-link border border-light rounded-circle"><i class="fas fa-chevron-right"></i></router-link>
+        <div class="d-flex flex-column align-items-center">
+            <router-link :to="{name: 'LoginPage'}" class="btn btn-link border border-light rounded-circle"><i class="fas fa-chevron-right"></i></router-link>
         </div>
     </div>
 </template>
