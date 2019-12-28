@@ -10,6 +10,7 @@ import WaitPage from '../pages/wait/WaitPage'
 import SelectDriverPage from '../pages/selectDriver/SelectDriverPage'
 import ContactPage from '../pages/contact/ContactPage'
 import FinishPage from '../pages/finish/FinishPage'
+import AboutPage from '../pages/about/AboutPage'
 
 Vue.use(Router)
 
@@ -66,5 +67,10 @@ export default new Router({
       name: 'FinishPage',
       component: FinishPage
     },
+    {
+      path: '/about',
+      name: 'AboutPage',
+      component: AboutPage
+    }
   ]
 })

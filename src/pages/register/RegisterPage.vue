@@ -95,7 +95,7 @@ input {
   margin: auto;
   width: 40%;
 
-  @media only screen and (max-width: 766px) {
+  @media only screen and (max-width: 767px) {
     width: 80%;
   }
 }

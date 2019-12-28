@@ -2,12 +2,22 @@
     <header>
       <div class="container">
           <div class="desktop-header d-none d-sm-flex justify-content-between align-items-center">
-              <p>Parcloud</p>
+              <div class="img-container">
+                  <router-link :to="{name: 'HomePage'}">
+                <img class="h-100" src="../assets/logo.png" />
+                  </router-link>
+              </div>
             <ul class="desktop-header justify-content-center list-unstyled m-0">
+                <router-link :to="{name: 'AboutPage'}" class="btn btn-link text-black">เกี่ยวกับเรา</router-link>
+                <a href="https://www.facebook.com/parcloud/" class="btn btn-link text-black">Facebook Link</a>
             </ul>
           </div>
         <div class="mobile-header py-1 d-flex d-sm-none justify-content-between align-items-center">
-        <p>Parcloud</p>
+        <div class="img-container">
+            <router-link :to="{name: 'HomePage'}">
+                <img class="h-100" src="../assets/logo.png" />
+                </router-link>
+              </div>
           <button class="hamburger-div" @click="() => setShowMenu()">
             <div v-bind:class="{ show: isShowMenu }" id="hamburger">
               <span />
@@ -19,7 +29,8 @@
         </div>
       </div>
       <ul v-bind:class="{ show: isShowMenu }" class="mobile-item d-flex flex-column list-unstyled m-0 d-sm-none">
-          
+          <router-link :to="{name: 'AboutPage'}" class="btn btn-link text-black">เกี่ยวกับเรา</router-link>
+          <a href="https://www.facebook.com/parcloud/" class="btn btn-link">Facebook Link</a>
     </ul>
     </header>
 </template>
@@ -37,6 +48,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../styles/variables';
+.text-black {
+    color: black !important;
+}    
 p {
     color: black;
     margin-bottom: 0;
@@ -48,23 +62,9 @@ header {
   top: 0;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  a {
-    font-size: 14px;
-    border-bottom: 4px solid transparent;
-    font-family: 'TATSanaChon';
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease, border-color 0.3s ease;
-  }
 
   .desktop-header {
       height: 60px;
-    a {
-      &:hover {
-        color: $blue;
-        border-color: $blue;
-      }
-    }
   }
 
   .mobile-header {
@@ -143,5 +143,12 @@ header {
       max-height: 200px;
     }
   }
+
+  .img-container {
+      height: 35px;
+      img {
+          max-height: 35px;
+      }    
+  }   
 }
 </style>

@@ -6,14 +6,14 @@
                 <div class="d-flex flex-column flex-md-row justify-content-between justify-content-md-center align-items-md-center w-100 py-3">
                     <button
                         @click="() => changeType('owner')"
-                        class="mr-md-5 py-4 align-self-end align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
-                        <p class="mb-0">เจ้าของรถ</p>
+                        class="blue-btn mr-md-5 py-0 py-md-4 align-self-end align-self-md-center type-btn btn btn-link bg-blue text-white">
+                        <p class="end-txt ml-auto ml-md-0 mb-1 mt-auto mt-md-0">เจ้าของรถ</p>
                     </button>
                     <button
                         :disabled="true"
                         @click="() => changeType('driver')"
-                        class="mt-4 mt-sm-0 ml-md-5 py-4 align-self-start align-self-md-center type-btn btn btn-link bg-blue text-white d-flex flex-column align-items-center">
-                        <p class="mb-0">คนขับ</p>
+                        class="blue-btn mt-4 mt-sm-0 ml-md-5 py-0 py-md-4 align-self-start align-self-md-center type-btn btn btn-link bg-blue text-white">
+                        <p class="start-txt mb-1 mr-auto mr-md-0 mt-auto mt-md-0">คนขับ</p>
                     </button>
                 </div>
             </div>
@@ -69,12 +69,30 @@ export default {
             padding: 0px !important;
         }
     }
+    .blue-btn {
+        width: 180px;
+        font-family: 'Chonburi';
+        @media screen and (max-width: 576px) {
+            height: 150px;
+            width: 250px;
+            font-size: 18px;
+        }
+    }
     .head {
         font-family: 'Chonburi';
         font-size: 48px;
         color: $blue;
     }
-    .type-btn {
-        width: 180px;
+    .end-txt {
+       @media screen and (max-width: 576px) {
+           width: 100%;
+            text-align: right;
+        } 
+    }
+    .start-txt {
+        @media screen and (max-width: 576px) {
+           width: 100%;
+            text-align: left;
+        } 
     }
 </style>
